@@ -1,0 +1,100 @@
+version: 2
+
+workflows:
+  version: 2
+  test:
+    jobs:
+      - test-3.9
+      - test-3.8
+#      - test-3.7
+#      - test-3.6
+#      - test-3.5
+#      - test-3.4
+#      - test-2.7
+
+jobs:
+  test-full: &test-template
+    docker:
+      - image: circleci/python:3.9
+    working_directory: ~/repo39
+    steps:
+      - checkout
+      - run:
+          name: Install strup and associated testing packages
+          command: |
+            sudo /usr/local/bin/python -m pip install --upgrade pip
+            pip install '.[dev]' --user
+      - run:
+          name: black code style checks
+          command: black --check strup/
+      - run:
+          name: Run pytest and coverage
+          command: |
+            coverage run --source=strup -m pytest -v --junitxml=reports/pytest.xml
+            coverage report -m
+            coverage html  # open htmlcov/index.html in a browser
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: htmlcov
+
+  test-light: &test-template-light
+    docker:
+      - image: circleci/python:3.5
+    working_directory: ~/repo35
+    steps:
+      - checkout
+      - run:
+          name: Install strup and subset of testing tools
+          command: |
+            sudo /usr/local/bin/python -m pip install --upgrade pip
+            pip install '.[test]' --user
+      - run:
+          name: Run pytest (no coverage and code style checks)
+          command: python -m pytest -v --junitxml=reports/pytest.xml --durations=10
+      - store_test_results:
+          path: reports
+      - store_artifacts:
+          path: reports
+
+  test-3.9:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.9
+    working_directory: ~/repo39
+
+  test-3.8:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.8
+    working_directory: ~/repo38
+
+  test-3.7:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.7
+    working_directory: ~/repo37
+
+  test-3.6:
+    <<: *test-template
+    docker:
+      - image: circleci/python:3.6
+    working_directory: ~/repo36
+
+  test-3.5:
+    <<: *test-template-light
+    docker:
+      - image: circleci/python:3.5
+    working_directory: ~/repo35
+
+  test-3.4:
+    <<: *test-template-light
+    docker:
+      - image: circleci/python:3.4
+    working_directory: ~/repo34
+
+  test-2.7:
+    <<: *test-template-light
+    docker:
+      - image: circleci/python:2.7
+    working_directory: ~/repo27

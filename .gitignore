@@ -1,0 +1,16 @@
+syntax: glob
+.*
+!/.gitignore
+!/.coveragerc
+!/.readthedocs.yml
+!/.pre-commit-config.yaml
+!/.flake8
+!/.circleci
+*.pyc
+*.png
+htmlcov
+build/
+dist/
+*egg-info*
+report.html
+assets
