@@ -32,6 +32,7 @@ setup(
         "A package for unpacking int, float, string and bool objects from a text string."
     ),
     long_description=long_description,
+    long_description_content_type="text/markdown",
     # The project's main homepage.
     url="https://github.com/jeblohe/strup",
     # Author details
