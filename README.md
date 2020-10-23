@@ -11,7 +11,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/jeblohe/strup/blob/master/LICENSE)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/jeblohe/strup)
 
-This Python package unpack basic objects from a text string.
+This Python package is for unpacking basic objects from a text string.
 The standard data types **string**, **int**, **float** and **bool** are supported.
 
 ## Goals
@@ -19,8 +19,8 @@ The standard data types **string**, **int**, **float** and **bool** are supporte
 The main goal with **strup** is to provide a terse and intuitive interface to be applied 
 for small or moderate text processing.
 If the standard [string methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
-are too low level and the [re](https://docs.python.org/3/library/re.html)
-module provides too much complexity for your task, then **strup** is a compromise. 
+are too low level and the [re-module](https://docs.python.org/3/library/re.html)
+provides too much complexity for your task, then **strup** is a compromise.
 
 If extending this package, backward compatibility of the API will be strongly emphasized.
 
@@ -38,12 +38,12 @@ Each character in the string **fmt** defines the data type for the corresponding
 (5, 2.3, 'ole', True)
 ```
 
-This is similar to the syntax applied in the standard library module
+This is like the syntax applied in the standard library module
 [struct](https://docs.python.org/3/library/struct.html) for handling of binary data.
 Dots in the **fmt** string indicates that the corresponding item in **text** should be ignored.
 
 ```python
->>> unpack("f..s", " 2.3 ,ole,55,   dole", sep=',')      # sep as defined in the standard string.split()
+>>> unpack("f..s", " 2.3 ,ole,55,   dole", sep=',')      # sep as defined in string.split()
 (2.3, '   dole')
 ```
 Strings confined by quotes are supported

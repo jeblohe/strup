@@ -28,7 +28,7 @@
    :target: https://pypi.python.org/pypi/sphinx_rtd_theme/
    :alt: License
 
-This Python package unpacks basic objects from a text string.
+This Python package is for unpacking basic objects from a text string.
 The standard data types :attr:`string`, :attr:`int`, :attr:`float` and :attr:`bool` are supported.
 
 
@@ -140,7 +140,7 @@ All processing within the function :meth:`unpack()`, as described above, is hand
    >>> from strup import Unpack
 
 All arguments for the function :meth:`unpack()`, except :attr:`text`, are handled by the constructor of :class:`Unpack`.
-This constructor also perform preprocessing. Finally, :meth:`Unpack.__call__` process the actual :attr:`text`.
+This constructor also performs preprocessing. Finally, :meth:`Unpack.__call__` process the actual :attr:`text`.
 
 Consequently, when the same unpack pattern is applied in loops, we may benefit from utilizing :class:`Unpack` directly.
 
