@@ -3,11 +3,6 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-.. warning::
-
-   This site is under construction!
-
-
 .. toctree::
    :hidden:
    :maxdepth: 2
@@ -210,14 +205,14 @@ To install :attr:`strup` from PyPI:
 .. code-block:: bash
 
    pip install strup           # For end users
-   pip install -e .[dev]       # For package development (from the root of your strup Git repo)
+   pip install -e .[dev]       # For package development (from the root of your strup repo)
 
 
 or from Anaconda:
 
 .. code-block:: bash
 
-   conda install strup
+   conda install -c jeblohe strup
 
 The source code is hosted on GitHub. Continuous integration at CircleCI.
 The code is extensively tested on Python 2.7, 3,4, 3.5, 3.6, 3.7, 3.8 and 3.9.
@@ -232,7 +227,7 @@ This software is licensed under the MIT-license.
 Version
 =======
 
-1.0.0rc1 - 2020.10.23
----------------------
+1.0.0 - 2020.10.24
+------------------
 
-Production stable, however links to external sites and badges need to be configured.
+First official release

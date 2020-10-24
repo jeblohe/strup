@@ -1,5 +1,3 @@
-> WARNING: This site is under construction!
-
 # strup - string unpack
 
 [![PyPI - Python Version](https://img.shields.io/pypi/pyversions/strup)](https://pypi.org/project/strup/)
@@ -7,9 +5,9 @@
 [![Coveralls github](https://img.shields.io/coveralls/github/jeblohe/strup)](https://coveralls.io/github/jeblohe/strup)
 [![Read the Docs](https://img.shields.io/readthedocs/strup)](https://strup.readthedocs.io/)
 [![PyPI](https://img.shields.io/pypi/v/strup)](https://pypi.org/project/strup/)
-[![Conda](https://img.shields.io/conda/v/conda-forge/strup)](https://anaconda.org/conda-forge/strup)
+[![Conda](https://img.shields.io/conda/v/jeblohe/strup)](https://anaconda.org/jeblohe/strup)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/jeblohe/strup/blob/master/LICENSE)
-[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/jeblohe/strup)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://black.readthedocs.io/)
 
 This Python package is for unpacking basic objects from a text string.
 The standard data types **string**, **int**, **float** and **bool** are supported.
@@ -97,7 +95,7 @@ pip install -e .[dev]    # For package development (from the root of your strup 
 or Anaconda:
 
 ```bash
-conda install strup
+conda install -c jeblohe strup
 ```
 
 **strup** is continuously tested on Python 2.7, 3.4 and above.
