@@ -18,7 +18,7 @@ for line in open(os.path.join(here, "strup", "__init__.py")):
 dependencies = []
 
 # Packages for development of strup (assumed on Python 3.x)
-dependencies_dev = ["pytest>=5.1", "pytest-cov", "coverage", "black"]
+dependencies_dev = ["pytest>=5.1", "pytest-cov", "coverage", "black", "coveralls"]
 # Packages for testing strup without syntax and coverage checks (for CI checks on old images)
 dependencies_test = ["pytest>=4.6"]
 
