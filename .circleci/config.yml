@@ -40,7 +40,8 @@ jobs:
           path: reports
       - store_artifacts:
           path: htmlcov
-      - coveralls/upload
+      - coveralls/upload:
+          parallel: false
 
   test-light: &test-template-light
     docker:
