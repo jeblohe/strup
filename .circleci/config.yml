@@ -1,7 +1,10 @@
-version: 2
+version: 2.1
+
+orbs:
+  coveralls: coveralls/coveralls@x.y.z
 
 workflows:
-  version: 2
+  version: 2.1
   test:
     jobs:
       - test-3.9
@@ -13,7 +16,7 @@ workflows:
 #      - test-2.7
 
 jobs:
-  test-full: &test-template
+  test-full: &test-template-main
     docker:
       - image: circleci/python:3.9
     working_directory: ~/repo39
@@ -37,11 +40,12 @@ jobs:
           path: reports
       - store_artifacts:
           path: htmlcov
+      - coveralls/upload
 
   test-light: &test-template-light
     docker:
-      - image: circleci/python:3.5
-    working_directory: ~/repo35
+      - image: circleci/python:3.8
+    working_directory: ~/repo38
     steps:
       - checkout
       - run:
@@ -58,25 +62,25 @@ jobs:
           path: reports
 
   test-3.9:
-    <<: *test-template
+    <<: *test-template-main
     docker:
       - image: circleci/python:3.9
     working_directory: ~/repo39
 
   test-3.8:
-    <<: *test-template
+    <<: *test-template-light
     docker:
       - image: circleci/python:3.8
     working_directory: ~/repo38
 
   test-3.7:
-    <<: *test-template
+    <<: *test-template-light
     docker:
       - image: circleci/python:3.7
     working_directory: ~/repo37
 
   test-3.6:
-    <<: *test-template
+    <<: *test-template-light
     docker:
       - image: circleci/python:3.6
     working_directory: ~/repo36
