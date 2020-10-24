@@ -20,7 +20,7 @@
 
 .. .. image:: https://travis-ci.org/readthedocs/sphinx_rtd_theme.svg?branch=master
    :target: https://travis-ci.org/readthedocs/sphinx_rtd_theme
-   :alt: Build Status
+   :alt:  Build Status
    .. image:: https://readthedocs.org/projects/sphinx-rtd-theme/badge/?version=latest
    :target: http://sphinx-rtd-theme.readthedocs.io/en/latest/?badge=latest
    :alt: Documentation Status
@@ -221,7 +221,8 @@ or from Anaconda:
    conda install strup
 
 The source code is hosted on GitHub. Continuous integration at CircleCI.
-The code is extensively tested on Python 2.7, 3.6, 3.7, 3.8 and 3.9.
+The code is extensively tested on Python 2.7, 3,4, 3.5, 3.6, 3.7, 3.8 and 3.9.
+The test coverage is reported by Coveralls.
 
 License
 =======

@@ -91,8 +91,8 @@ The source code for this package is located on [GitHub](https://github.com/jeblo
 To install **strup** from PyPI:
 
 ```bash
-pip install strup           # For end users
-pip install -e .[dev]       # For package development (from the root of your strup Git repo)
+pip install strup        # For end users
+pip install -e .[dev]    # For package development (from the root of your strup Git repo)
 ```
 
 or Anaconda:
