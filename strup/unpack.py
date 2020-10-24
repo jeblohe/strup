@@ -71,6 +71,14 @@ def unpack(fmt, text, *args, **kwargs):
     ValueError
         If any parsing error occur.
 
+    Examples
+    --------
+
+    >>> unpack("ifs?", "5 2.3   ole  True")
+    (5, 2.3, 'ole', True)
+    >>> unpack("isf", "100 'Donald Duck' 125.6", quote="'")
+    (100, 'Donald Duck', 125.6)
+
     """
     try:
         return Unpack(fmt, *args, **kwargs)(text)

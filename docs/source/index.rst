@@ -46,7 +46,7 @@ Each format character in the string :attr:`fmt` indicates the data type for the 
   >>> i, x, s, ok
   (5, 2.3, 'ole', True)
 
-The format characters are consistent with the syntax applied in the standard library module
+The format characters for the data types are consistent with the syntax applied in the standard library module
 `struct <https://docs.python.org/3/library/struct.html>`_ for handling of binary data.
 Characters in :attr:`fmt` are case sensitive.
 
@@ -187,13 +187,12 @@ Docstrings from the source code are provided :doc:`here <api>`.
 Considerations
 ==============
 
-The main goal with :attr:`strup` is to provide a clean and intuitive interface to be applied
-for small or moderate text processing.
+A major goal with :attr:`strup` is to provide a clean and intuitive interface.
 If standard `string methods <https://docs.python.org/3/library/stdtypes.html#string-methods>`_
-are too low level and the `re <https://docs.python.org/3/library/re.html>`_
-module provides too much complexity, then :attr:`strup` is a compromise.
+are too low level and the `re-module <https://docs.python.org/3/library/re.html>`_
+adds too much complexity, then :attr:`strup` might be your compromise.
 
-If extending this package, backward compatibility of the API will be strongly emphasized.
+Backward compatibility of the API is strongly emphasized.
 
 :attr:`strup` will not grow into a general purpose parser.
 Text processing is in general a comprehensive topic.

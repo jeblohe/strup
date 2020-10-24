@@ -16,13 +16,12 @@ The standard data types **string**, **int**, **float** and **bool** are supporte
 
 ## Goals
 
-The main goal with **strup** is to provide a terse and intuitive interface to be applied 
-for small or moderate text processing.
+A major goal with **strup** is to provide an intuitive interface.
 If the standard [string methods](https://docs.python.org/3/library/stdtypes.html#string-methods)
 are too low level and the [re-module](https://docs.python.org/3/library/re.html)
-provides too much complexity for your task, then **strup** is a compromise.
+adds too much complexity to your task, then **strup** might be your compromise.
 
-If extending this package, backward compatibility of the API will be strongly emphasized.
+Backward compatibility of this API is strongly emphasized.
 
 ## Usage
 
@@ -38,9 +37,9 @@ Each character in the string **fmt** defines the data type for the corresponding
 (5, 2.3, 'ole', True)
 ```
 
-This is like the syntax applied in the standard library module
-[struct](https://docs.python.org/3/library/struct.html) for handling of binary data.
-Dots in the **fmt** string indicates that the corresponding item in **text** should be ignored.
+Similar syntax is applied in the standard [struct](https://docs.python.org/3/library/struct.html) 
+module for handling of binary data. However,
+dots in the **fmt** string indicates that the corresponding item in **text** should be ignored.
 
 ```python
 >>> unpack("f..s", " 2.3 ,ole,55,   dole", sep=',')      # sep as defined in string.split()
