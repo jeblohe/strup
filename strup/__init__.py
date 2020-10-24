@@ -6,6 +6,6 @@ strup is written by Jens B. Helmers (c) 2020
 SPDX-License-Identifier: MIT
 """
 
-__version__ = "1.0.0rc2"
+__version__ = "1.0.0rc3"
 
 from .unpack import Unpack, unpack
