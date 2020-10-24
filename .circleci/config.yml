@@ -1,10 +1,7 @@
-version: 2.1
-
-orbs:
-  coveralls: coveralls/coveralls@1.0.6
+version: 2
 
 workflows:
-  version: 2.1
+  version: 2
   test:
     jobs:
       - test-3.9
@@ -36,12 +33,11 @@ jobs:
             coverage run --source=strup -m pytest -v --junitxml=reports/pytest.xml
             coverage report -m
             coverage html  # open htmlcov/index.html in a browser
+            coveralls
       - store_test_results:
           path: reports
       - store_artifacts:
           path: htmlcov
-      - coveralls/upload:
-          parallel: false
 
   test-light: &test-template-light
     docker:
